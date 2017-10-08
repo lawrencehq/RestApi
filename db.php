@@ -32,6 +32,7 @@ class DBAccess {
         $this->conn = connect();
     }
 
+    // add user, username must be unique
     public function addUser($username, $gender, $height, $weight) {
         $sql = "insert into user(username, gender, height, weight) VALUES('$username', '$gender', '$height', '$weight')";
         $rs = $this->conn->query($sql);
@@ -43,6 +44,7 @@ class DBAccess {
         }
     }
 
+    // get username through username
     public function getUserViaName($username) {
         $sql = "select * from user where username='$username'";
         $rs = $this->conn->query($sql);
@@ -50,6 +52,7 @@ class DBAccess {
         return $user;
     }
 
+    // get all categoties
     public function getCategory() {
         $sql = "select * from category";
         $rs = $this->conn->query($sql);
@@ -57,6 +60,7 @@ class DBAccess {
         return $categories;
     }
 
+    // get food according to categories
     public function getFoodViaCategory($category_id) {
         $sql = "select * from food where cid='$category_id'";
         $rs = $this->conn->query($sql);
@@ -64,6 +68,7 @@ class DBAccess {
         return $food;
     }
 
+    // get all foods
     public function getAllFood() {
         $sql = "select * from food";
         $rs = $this->conn->query($sql);
@@ -71,6 +76,7 @@ class DBAccess {
         return $food;
     }
 
+    // add one record
     public function addRecord($userid, $foodid, $quantity) {
         $date = date('Y-m-d');
         $sql = "insert into record(uid, fid, quantity, time) VALUES('$userid', '$foodid', '$quantity', '$date')";
@@ -83,6 +89,7 @@ class DBAccess {
         }
     }
 
+    // get records according to user id and date
     public function getRecordViaDate($date, $userid) {
         $sql = "select * from record join user ON record.uid=user.id join food ON record.fid=food.id
                 where uid='$userid' and time='$date'";
@@ -91,6 +98,7 @@ class DBAccess {
         return $records;
     }
 
+    // get all food names
     public function getFoodNames() {
         $sql = "select name from food";
         $rs = $this->conn->query($sql);
