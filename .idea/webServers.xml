@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2fa735b8-88e8-4447-a898-c4249569df60" name="server" url="http://52.255.60.10">
+        <fileTransfer host="52.255.60.10" port="22" rootFolder="/home/grouphhx/RestApi" accessType="SFTP" password="dfeddfd8dfc5dfdfdfdadf9bdf98df99df9edf9fdf9cdf86df84df86" username="grouphhx">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
